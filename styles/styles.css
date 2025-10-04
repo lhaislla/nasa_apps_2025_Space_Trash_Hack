@@ -1,0 +1,78 @@
+body {
+    background: linear-gradient(135deg, #0b1e3d 70%, #b84a39 100%);
+    color: #fff;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+header {
+    background: #0b1e3d;
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+    border-bottom: 4px solid #b84a39;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 2px;
+    margin: 0.5rem 0;
+    text-shadow: 0 2px 8px #b84a39;
+    position: relative;
+}
+
+h1::after {
+    content: "🚀";
+    margin-left: 0.5rem;
+    font-size: 2rem;
+    vertical-align: middle;
+}
+
+header p {
+    color: #b8c6e8;
+    font-size: 1.2rem;
+    margin: 0.5rem 0 0 0;
+}
+
+main {
+    max-width: 700px;
+    margin: 2rem auto;
+    background: rgba(11, 30, 61, 0.85);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px #0b1e3d77;
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: #b84a39;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+ol, ul {
+    margin-left: 1.5rem;
+}
+
+a {
+    color: #b8c6e8;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+a:hover {
+    color: #fff;
+}
+
+footer {
+    background: #0b1e3d;
+    color: #b8c6e8;
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 2px solid #b84a39;
+    margin-top: 2rem;
+}
