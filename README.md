@@ -30,17 +30,7 @@ git config --global user.email "your_email@example.com"
 ## Como executar o projeto JS
 
 1. Navegue até a pasta onde está o arquivo `index.html` (por exemplo, `src/pages`).
-2. Abra o terminal e execute um servidor local simples. Exemplos:
-   - Com Python 3:
-     ```
-     python -m http.server 8000
-     ```
-   - Com Node.js (caso tenha o pacote `http-server` instalado):
-     ```
-     npx http-server .
-     ```
-3. Abra o navegador e acesse: [http://localhost:8000](http://localhost:8000)
-4. O site estará disponível e o JavaScript será carregado automaticamente.
+2. O site estará disponível e o JavaScript será carregado automaticamente.
 
 > **Dica:** Você também pode abrir o arquivo `index.html` diretamente no navegador, mas usar um servidor local é recomendado para evitar problemas com carregamento de recursos.
 
