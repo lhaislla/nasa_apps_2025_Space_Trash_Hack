@@ -47,6 +47,6 @@ O notebook está disponível no proejto e pode ser acessado pelo aquivo
 
 ## Site do Projeto
 
-Acesse a versão online do projeto em: [NASA Space Trash Hack](https://lhaislla.github.io/nasa_apps_2025_Space_Trash_Hack/pages/grafic.html)
+Acesse a versão online do projeto em: [NASA Space Trash Hack](https://lhaislla.github.io/nasa_apps_2025_Space_Trash_Hack/)
 
 
