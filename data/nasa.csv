@@ -1,0 +1,28 @@
+Nome Item,Total Massa (Kg),Total Volume (m³),Wast Item,Key Materials,% Key Materials,Approx. Misture Content (%),% of item by Mass,% of item by Volume,Exemple Commercial Equivalent
+Foam Packaging,1000,10,Zotek F30,Zotec F30 ,100%,~0%,100%,100%,Zotek F30
+EVA Waste,100,1,Cargo Transfer Bags (CTB),Nomex ,92%,~0%,100%,100%,Magrid  NOM10 Nomex White Hood
+EVA Waste,100,1,Cargo Transfer Bags (CTB),Nylon,3%,~0%,100%,100%,Magrid  NOM10 Nomex White Hood
+EVA Waste,100,1,Cargo Transfer Bags (CTB),Polyester ,2%,~0%,100%,100%,Magrid  NOM10 Nomex White Hood
+Fabrics,1000,10,Clothing,Cotton/celulose,56%,4%,77%,59%,Hanes Men's Undershift
+Fabrics,1000,10,Clothing,Nylon,6%,4%,77%,59%,Hanes Men's Undershift
+Fabrics,1000,10,Clothing,Polyester ,38%,4%,77%,59%,Hanes Men's Undershift
+Fabrics,1000,10,Towels/ Wash Clothis,Cotton/cellulose,100%,5%,21%,39%,R&R Textile Wash Cloth
+Fabrics,1000,10,CleaningWipes,Cotton/cellulose,100%,69%,2%,2%,Virox PreEmpt Wipes
+Food Packaging,1000,10,Overwrap,Polyester ,13%,~0%,29%,29%,Glenroy White Ready Seal 225
+Food Packaging,1000,10,Overwrap,Polyethylene,15%,~0%,29%,29%,Glenroy White Ready Seal 225
+Food Packaging,1000,10,Overwrap,Aluminum,30%,~0%,29%,29%,Glenroy White Ready Seal 225
+Food Packaging,1000,10,Rehydratable Pouch,Nylon,41%,4%,39%,40%,Winpak Multi-Purpose Forming Film (MB225PL)
+Food Packaging,1000,10,Rehydratable Pouch,Polyethylene,33%,4%,39%,40%,Winpak Multi-Purpose Forming Film (MB225PL)
+Food Packaging,1000,10,Rehydratable Pouch,EVOH,11%,4%,39%,40%,Winpak Multi-Purpose Forming Film (MB225PL)
+Food Packaging,1000,10,Drink Pouch,Aluminum,24%,3%,8%,8%,Kraft Heinz Capri Sun
+Food Packaging,1000,10,Drink Pouch,Polyethylene,65%,3%,8%,8%,Kraft Heinz Capri Sun
+Food Packaging,1000,10,Drink Pouch,Polyethylene Terephthalate,11%,3%,8%,8%,Kraft Heinz Capri Sun
+Structural Elements Struts,1000,10,Aluminium Structure/ Struts,Aluminum,>90%,~0%,90%,90%,Uline ALuminum STeam Table Pan
+Structural Elements Struts,1000,10,Polyethylene Matrix Composites,Thermoset/Thermoplastic Plastic Resin,40%,~0%,10%,10%,True Composites Carbon Fiber and Resin Kit
+Structural Elements Struts,1000,10,Polyethylene Matrix Composites,Carbon Fiber,60%,~0%,10%,10%,True Composites Carbon Fiber and Resin Kit
+Other Packaging/Gloves,100,1,Air cushion,Polyesthylene,100%,~0%,4%,2%,Uline Air. Pillor Film
+Other Packaging/Gloves,100,1,Bubbie wrap filer,Polyesthylene,100%,~0%,1%,2%,Office Depot Small Bubble Cushioning
+Other Packaging/Gloves,100,1,Reclosable bags,Polyethylene,100%,~0%,9%,2%,CEL Scientific Kynar gas Saplimg bags
+Other Packaging/Gloves (cont.),100,1,Anti-Static Bubble Wrap Bags,Polyethylene,100%,~0%,9%,2%,Uline Anti-Static Bubbie Bags
+Other Packaging/Gloves (cont.),100,1,Plastazote LD45 FR,Polyethylene,100%,~0%,36%,68%,Zotefoams Plastazote LD45 FR
+Other Packaging/Gloves (cont.),100,1,Nitrile Gloves,Nitrile,100%,2%,41%,22%,Med Pride Medical Examination Nitric Gloves

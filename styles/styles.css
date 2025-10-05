@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(135deg, #0b1e3d 70%, #b84a39 100%);
+    background: linear-gradient(135deg, #1800ad 70%, #9eff1f 100%);
     color: #fff;
     font-family: 'Segoe UI', 'Arial', sans-serif;
     margin: 0;
@@ -7,10 +7,41 @@ body {
 }
 
 header {
-    background: #0b1e3d;
+    background: #1800ad;
     padding: 2rem 0 1rem 0;
     text-align: center;
-    border-bottom: 4px solid #b84a39;
+    border-bottom: 4px solid #9eff1f;
+    position: relative;
+}
+
+.logo {
+    width: 90px;
+    height: auto;
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+.nav-link {
+    color: #9eff1f;
+    background: transparent;
+    border: 2px solid #9eff1f;
+    border-radius: 6px;
+    padding: 0.4em 1em;
+    margin: 0 0.5em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-link:hover {
+    background: #9eff1f;
+    color: #1800ad;
 }
 
 h1 {
@@ -19,7 +50,7 @@ h1 {
     color: #fff;
     letter-spacing: 2px;
     margin: 0.5rem 0;
-    text-shadow: 0 2px 8px #b84a39;
+    text-shadow: 0 2px 8px #9eff1f;
     position: relative;
 }
 
@@ -31,7 +62,7 @@ h1::after {
 }
 
 header p {
-    color: #b8c6e8;
+    color: #eaffc7;
     font-size: 1.2rem;
     margin: 0.5rem 0 0 0;
 }
@@ -39,9 +70,9 @@ header p {
 main {
     max-width: 700px;
     margin: 2rem auto;
-    background: rgba(11, 30, 61, 0.85);
+    background: rgba(24, 0, 173, 0.85);
     border-radius: 16px;
-    box-shadow: 0 4px 24px #0b1e3d77;
+    box-shadow: 0 4px 24px #1800ad77;
     padding: 2rem;
 }
 
@@ -50,7 +81,7 @@ section {
 }
 
 h2 {
-    color: #b84a39;
+    color: #9eff1f;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
@@ -60,7 +91,7 @@ ol, ul {
 }
 
 a {
-    color: #b8c6e8;
+    color: #eaffc7;
     text-decoration: underline;
     transition: color 0.2s;
 }
@@ -69,10 +100,10 @@ a:hover {
 }
 
 footer {
-    background: #0b1e3d;
-    color: #b8c6e8;
+    background: #1800ad;
+    color: #eaffc7;
     text-align: center;
     padding: 1rem 0;
-    border-top: 2px solid #b84a39;
+    border-top: 2px solid #9eff1f;
     margin-top: 2rem;
 }

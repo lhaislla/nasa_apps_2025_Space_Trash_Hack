@@ -2,12 +2,12 @@ document.addEventListener('DOMContentLoaded', iniciarPagina);
 
 function iniciarPagina() {
     const title = document.querySelector('h1');
-    title.textContent = 'Nasa Space Trash Hack';
+    title.textContent = 'Recyclonauts';
 
     title.addEventListener('mouseenter', destacarTitulo);
     title.addEventListener('mouseleave', resetarTitulo);
 
-    alert('Bem-vindo ao Nasa Space Trash Hack!');
+    alert('Welcome to Recyclonauts!');
 }
 
 function destacarTitulo() {
