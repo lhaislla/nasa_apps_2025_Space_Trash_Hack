@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recyclonaut - Products</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-color: #0a2463;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00ff6a;
+        }
+
+        .account-btn {
+            background-color: white;
+            color: #0a2463;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .account-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 30px;
+        }
+
+        .products-title {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #000;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 0;
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            overflow: visible;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px 15px 15px;
+            color: #0a2463;
+            text-decoration: underline;
+            margin: 0;
+            background: white;
+        }
+
+        .product-image-box {
+            background: white;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 220px;
+            border: 3px solid #e0e0e0;
+            margin: 0 15px 15px 15px;
+        }
+
+        .product-image-box img {
+            max-width: 100%;
+            max-height: 200px;
+            object-fit: contain;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 15px 15px 15px;
+        }
+
+        .btn-make {
+            background-color: #00ff00;
+            color: #000;
+        }
+
+        .btn-make:hover {
+            background-color: #00dd00;
+            transform: scale(1.02);
+        }
+
+        .btn-unavailable {
+            background-color: #d4d4d4;
+            color: #000;
+            cursor: not-allowed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            padding: 10px 20px;
+        }
+
+        .unavailable-info {
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .products-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Recyclonaut</div>
+        <a href="#" class="account-btn">
+            My account
+            <div class="account-icon">👤</div>
+        </a>
+    </header>
+
+    <div class="products-container">
+        <h1 class="products-title">Products available to manufacture</h1>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <h3 class="product-title">Gears</h3>
+                <div class="product-image-box">
+                    <img src="assets/gears.png" alt="Gears">
+                </div>
+                <button class="btn btn-make" onclick="handleMake('Gears')">Make</button>
+            </div>
+
+            <div class="product-card">
+                <h3 class="product-title">Wiring cables</h3>
+                <div class="product-image-box">
+                    <img src="assets/cables.png" alt="Wiring cables">
+                </div>
+                <button class="btn btn-make" onclick="handleMake('Wiring cables')">Make</button>
+            </div>
+
+            <div class="product-card">
+                <h3 class="product-title">Metal alloys</h3>
+                <div class="product-image-box">
+                    <img src="assets/metal.png" alt="Metal alloys">
+                </div>
+                <button class="btn btn-make" onclick="handleMake('Metal alloys')">Make</button>
+            </div>
+
+            <div class="product-card">
+                <h3 class="product-title">General parts</h3>
+                <div class="product-image-box">
+                    <img src="assets/parts.png" alt="General parts">
+                </div>
+                <button class="btn btn-unavailable" disabled>
+                    Material unavailable
+                    <span class="unavailable-info">Requires 50g.</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleMake(productName) {
+    if (productName === 'Metal alloys') {
+        // Redireciona para a página process.html
+        window.location.href = 'process.html';
+    } else {
+        alert(`Iniciando fabricação de: ${productName}`);
+        console.log('Produto selecionado:', productName);
+    }
+}
+    </script>
+</body>
+</html>

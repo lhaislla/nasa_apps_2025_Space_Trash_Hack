@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recyclonaut</title>
+    <style> 
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header Styling */
+        header {
+          width: 100%;
+          background-color: #082067; /* Requested dark blue color */
+          text-align: center;
+          padding: 20px 0;
+          color: white;
+          font-size: 1.8em;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+             display: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .info-box {
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            flex: 1;
+            margin: 0 5px;
+            background-color: #e3f2fd; /* Light blue */
+        }
+        
+        .info-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #1565c0;
+        }
+        
+        /* Vertical Process Flow Styles */
+        .process-flow-vertical {
+            display: flex;
+            flex-direction: column; 
+            align-items: flex-start;
+            padding: 10px 0;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        
+        .step-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .step-circle {
+            min-width: 60px;
+            height: 60px;
+            background-color: #bdbdbd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: 3px solid #757575;
+            transition: all 1.0s ease-in-out;
+            z-index: 10;
+        }
+
+        .step-text {
+            font-size: 1em;
+            color: #555;
+            padding-left: 15px;
+            transition: color 1.0s ease-in-out;
+            font-weight: normal;
+        }
+
+        /* Activation Styles (animation) */
+        .step-active {
+            background-color: #4caf50 !important;
+            border-color: #388e3c !important;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+        }
+
+        .step-active-text {
+            color: #388e3c !important;
+            font-weight: bold !important;
+        }
+        
+        /* Vertical progress line */
+        .progress-bar-vertical {
+            position: absolute;
+            left: 20px;
+            top: 70px;
+            width: 3px;
+            background-color: #4caf50;
+            height: 0;
+            transition: height 1.0s ease-in-out;
+            z-index: 5;
+        }
+
+        /* Fine adjustments for line alignment */
+        .process-flow-vertical {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <header>Recyclonaut - Recycling Process on Mars</header>
+<div class="container">
+
+    <div class="header-info">
+        <div class="info-box">
+            <div class="info-title">Input:</div>
+            Drink Pouch (100g)<br>
+            Materials: aluminium 24%, polyethylene 65%, polyethylene terephthalate 11%
+        </div>
+        <div class="info-box">
+            <div class="info-title">Expected Output:</div>
+            Structural Aluminum Part<br>
+            Material: Refined Aluminum
+        </div>
+        <div class="info-box">
+            <div class="info-title">Destination:</div>
+            Additive Manufacturing
+        </div>
+        <div class="info-box">
+            <div class="info-title">Current Status:</div>
+            <span id="current-status">Awaiting Start...</span>
+        </div>
+    </div>
+
+    <div class="process-flow-vertical" id="process-flow-vertical">
+        <div class="progress-bar-vertical" id="progress-bar-vertical"></div>
+    </div>
+</div>
+
+<script>
+    // Process steps configuration (8 steps total)
+    const stepsData = [
+        { name: "Internal Shredding", text: "1. Shredding and Preparation (Plastic Layer Removal)", pirolise: false },
+        { name: "Transport to Pyrolysis Chamber", text: "2. Transport to Chamber (Isolation)", pirolise: false },
+        { name: "Argon Gas Purge", text: "3. Argon Purge (Total O₂ Removal)", pirolise: false },
+        { name: "Pyrolysis at 450°C", text: "4. Pyrolysis/Decomposition of Paper and Polymers", pirolise: false },
+        { name: "Aluminum Melting", text: "5. Separation and Melting (Liquid Aluminum)", pirolise: false },
+        
+        // Etapa 6: Vazamento Controlado (Injeção no Molde), substituída pela próxima etapa no fluxo simplificado
+        { name: "Controlled Pouring", text: "6. Controlled Pouring (Input for Manufacturing)", pirolise: false }, 
+        
+        { name: "Cooling & Granulation", text: "7. Rapid Cooling and Granulation", pirolise: false },
+        
+        // Etapa 8: Impressora 3D (Substitui as etapas finais)
+        { name: "Additive Manufacturing", text: "8. 3D Printing / Part Creation", pirolise: false }
+    ];
+
+    const flowContainer = document.getElementById('process-flow-vertical');
+    const statusDisplay = document.getElementById('current-status');
+    const progressBar = document.getElementById('progress-bar-vertical');
+    let currentStepIndex = 0;
+    const animationInterval = 1800; // Time in milliseconds between steps (1.8 seconds)
+
+    // Function to render the flow HTML
+    function renderFlow() {
+        flowContainer.innerHTML = '';
+        
+        // Renders each step
+        stepsData.forEach((step, index) => {
+            const stepItem = document.createElement('div');
+            stepItem.classList.add('step-item');
+            stepItem.id = `step-item-${index}`;
+
+            const stepContent = document.createElement('div');
+            stepContent.classList.add('step-content');
+
+            const circle = document.createElement('div');
+            circle.classList.add('step-circle');
+            circle.textContent = (index + 1);
+
+            const text = document.createElement('div');
+            text.classList.add('step-text');
+            text.textContent = step.text;
+
+            stepContent.appendChild(circle);
+            stepContent.appendChild(text);
+            stepItem.appendChild(stepContent);
+            flowContainer.appendChild(stepItem);
+        });
+    }
+
+    // Function to animate the steps
+    function animateFlow() {
+        if (currentStepIndex >= stepsData.length) {
+            statusDisplay.textContent = 'Recycling Cycle Complete! Product ready for use.';
+            progressBar.style.height = '100%';
+            return;
+        }
+
+        // 1. Update the Current Status in the header
+        statusDisplay.textContent = stepsData[currentStepIndex].name;
+
+        // 2. Activate Circle/Text
+        const circle = document.getElementById(`step-item-${currentStepIndex}`).querySelector('.step-circle');
+        const text = document.getElementById(`step-item-${currentStepIndex}`).querySelector('.step-text');
+        
+        circle.classList.add('step-active');
+        text.classList.add('step-active-text');
+
+        // 3. Update the Vertical Progress Bar
+        const progressPercent = (currentStepIndex + 1) / stepsData.length;
+        const totalHeight = flowContainer.offsetHeight;
+        
+        const targetHeight = totalHeight * progressPercent;
+        progressBar.style.height = `${targetHeight}px`;
+
+        currentStepIndex++;
+        
+        // Set the timeout for the next step
+        setTimeout(animateFlow, animationInterval);
+    }
+
+    // Start rendering and animation
+    window.onload = () => {
+        renderFlow();
+        // Small delay for the user to see the initial state before animation starts
+        setTimeout(animateFlow, 500); 
+    };
+
+</script>
+</body>
+</html>
